@@ -46,3 +46,17 @@ describe("inArray", function() {
       assert.deepEqual(surnameSortedAnswer, surnameSortedKey);
     });
 });
+describe("army", function() {
+  
+    it("army[0] shows 0", function() {
+      army[0]();
+      assert.deepEqual(army[5](),5);
+    });
+  
+  
+    it("army[5] shows 5", function() {
+      army[5]();
+      assert.deepEqual(army[0](),0);
+    });
+  
+  });
