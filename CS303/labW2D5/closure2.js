@@ -8,6 +8,13 @@ function inArray(arr) {
   
   let arr = [1, 2, 3, 4, 5, 6, 7];
   console.log( arr.filter(inArray([1, 2, 10])) ); // 1,2
+//=======================inBetween=============================================================
+function inBetween(a, b) {
+  return function(x) {
+    return x >= a && x <= b;
+  };
+}
+
 //=======================Sort by field==========================================================
 function byField(fieldName){
     return (a, b) => a[fieldName] > b[fieldName] ? 1 : -1;
