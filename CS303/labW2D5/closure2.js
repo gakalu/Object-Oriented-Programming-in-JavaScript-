@@ -14,18 +14,23 @@ function byField(fieldName){
   }
 //=======================Army of functions======================================================
 function makeArmy() {
-    let shooter = function() { 
-        let shooters = [];
-        console.log("I am shooter ", idx); 
-        return idx;
-        };
-    for(let i = 0; i < 10; i++) {
+  let shooters = [];
+
+  let i = 0;
+  while (i < 10) {
+      let j = i;
       let shooter = function() { // shooter function
-        console.log( i ); // should show its number
+        return j; // should show its number
       };
-      shooters.push(shooter);
-    }
-  
-    return shooters;
+    shooters.push(shooter);
+    i++;
+  }
+
+  return shooters;
 }
 
+let army = makeArmy();
+
+// Now the code works correctly
+army[0](); // 0
+army[5](); // 5
