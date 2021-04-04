@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="mycss.css">
+</html>
+
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>Alarm</title>
+	<link href="./alarm.css" type="text/css" rel="stylesheet">
+</head>
+
+
+<body>
+    <h1>Set Time and count countDown until set time and gives red signal</h1>
+
+	<div > 
+		<input id="count" type="text"> count
+	</div>
+
+	<div>
+		<input id="sec" type="text"> sec
+	</div>
+
+	<div>
+	<button id="go" onclick="runtimer()" >Go</button>
+	</div>
+
+	<div id="display">
+
+</body>
+<script>
+function runtimer()
+{
+
+	let xyz=document.getElementById("sec").value;
+	  setTimeout(()=>{
+
+    document.getElementById("display").innerHTML=changeBackground('red')
+	  },xyz)
+
+      let val=document.getElementById("count").value;
+      let count=1000;
+	setTimeout(() => { clearInterval(timerId);
+
+    document.getElementById("display").innerHTML=changeBackground(count+=1000);
+	  },val)
+}
+function changeBackground(color) {
+  document.body.style.background = color;
+}
+function countDown(){
+	
+}
+window.addEventListener("load",function() { changeBackground('white') });
+
+</script>
+
+</html>
