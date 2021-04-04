@@ -33,6 +33,7 @@ describe("inArray", function() {
         { name: "John", age: 20, surname: "Johnson"},
       ];
       let ageSortedAnswer = users.sort(byField("age"));
+        
       assert.deepEqual(ageSortedKey, ageSortedKey);
     });
   
@@ -60,3 +61,17 @@ describe("army", function() {
     });
   
   });
+describe("inBetween", function () {
+
+    it("returns the filter for values between", function () {
+        let filter3to6 = inBetween(3, 6);
+        assert.strictEqual(filter3to6(5), true);
+        assert.strictEqual(filter3to6(0), false);
+    });
+
+    it("tests inBetween works with Array.filter", function () {
+        let filter3to6 = inBetween(3, 6);
+        const arr2 = [0, 4, 5, 10, 6, 100];
+        assert.deepEqual(arr2.filter(filter3to6), [4, 5]);
+    });
+});
