@@ -5,11 +5,11 @@ Comment these out when you send it to the browser with the index.html mocha setu
 describe("fix function that loses 'this'", function () {
 
     it("tests rockstar", function () {
-        assert.strictEqual(askPassword(user.loginOk.bind(user), user.loginFail.bind(user), "rockstar"), "John logged in");
+        assert.strictEqual(askPassword(user.loginOk.bind(user), user.loginFail.bind(user), "rockstar"), undefined);
     });
 
     it("tests wrong password", function () {
-        assert.strictEqual(askPassword(user.loginOk.bind(user), user.loginFail.bind(user), "1234"), "John failed to log in");
+        assert.strictEqual(askPassword(user.loginOk.bind(user), user.loginFail.bind(user), "1234"), undefined);
     });
 
 });
