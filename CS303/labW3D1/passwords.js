@@ -15,12 +15,32 @@ function sayHi() {
   /* eslint-disable */
   
   
-  function askPassword(ok, fail, password) {
-    if (password == "rockstar") ok();
+  function askPassword(ok, fail) {
+    let password="rockstar";
+    if (password === "rockstar") ok();
     else fail();
   }
   
   let user = {
+    name: 'John',
+  
+    loginOk() {
+      console.log(`${this.name} logged in`);
+    },
+  
+    loginFail() {
+      console.log(`${this.name} failed to log in`);
+    },
+  };
+  askPassword(user.loginOk.bind(user), user.loginFail.bind(user));
+  //==================================================================================================
+  function askPassword2(ok, fail) {
+    let password2="rockstar";
+    if (password2 == "rockstar") ok();
+    else fail();
+  }
+  
+  let user2 = {
     name: 'John',
   
     login(result) {
@@ -28,18 +48,6 @@ function sayHi() {
     }
   };
   
-  function askPassword2(ok, fail, password2) {
-     if (password2 == "rockstar") ok();
-      else fail();
-  }
-  
-  let user2 = {
-      name: 'John',
-    
-      login(result) {
-        console.log( this.name + (result ? ' logged in' : ' failed to log in') );
-      }
-  };
   /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
   */
   module.exports = {askPassword, user, askPassword2, user2 };

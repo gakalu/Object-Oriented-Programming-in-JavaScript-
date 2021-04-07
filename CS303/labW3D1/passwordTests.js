@@ -9,7 +9,7 @@ describe("fix function that loses 'this'", function () {
     });
 
     it("tests wrong password", function () {
-        assert.strictEqual(askPassword(user.loginOk.bind(user), user.loginFail.bind(user), "1234"), undefined);
+        assert.strictEqual(askPassword(user.loginOk.bind(user), user.loginFail.bind(user), "1234"),undefined);
     });
 
 });
