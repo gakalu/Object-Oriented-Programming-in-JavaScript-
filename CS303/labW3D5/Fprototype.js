@@ -1,3 +1,11 @@
+// Q2
+let obj = {};
+
+function A() { return obj; }
+function B() { return obj; }
+
+console.log( new A() == new B() );
+//=============================================================================================
 //Q3
 function Rabbit() {}
 Rabbit.prototype = {
