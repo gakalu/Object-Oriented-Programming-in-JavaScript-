@@ -86,6 +86,3 @@ quiz.getAverage = function () {
   }
 return (totalScore/totalStudent)
 };
-
-/* comment out when running in browser */
-module.exports = { quiz };
