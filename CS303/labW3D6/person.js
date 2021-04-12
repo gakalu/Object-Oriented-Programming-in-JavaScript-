@@ -34,9 +34,3 @@ console.log(john.learn("Inheritance"));
 
 const bob=new Teacher()
 bob.initialize("Bob",34)
-
-
-
-
-/* comment out when running in browser */
-module.exports = {Teacher, Student}; 
